@@ -27,7 +27,7 @@ class ChatCellRenderer extends JPanel implements ListCellRenderer<ChatMessage> {
 
         // 时间标签样式
         timeLabel.setFont(new Font("SansSerif", Font.PLAIN, 10));
-        timeLabel.setForeground(Color.GRAY);
+        timeLabel.setForeground(Color.GREEN);
 
         add(textPane, BorderLayout.CENTER);
         add(timeLabel, BorderLayout.SOUTH);
@@ -53,14 +53,13 @@ class ChatCellRenderer extends JPanel implements ListCellRenderer<ChatMessage> {
         // 构建带样式的HTML内容
         String htmlContent = String.format(
                 "<html><body style='margin:3px; font-family:Microsoft YaHei, sans-serif;'>" +
-                        "<div style='width:%dpx; word-wrap:break-word; color:#333;'>%s</div>" +
+                        "<div style='width:%dpx; word-wrap:break-word; color:#c8ee6a;'>%s</div>" +
                         "</body></html>",
                 maxWidth,
                 safeContent
         );
 
         textPane.setText(htmlContent);
-
         // 时间显示
         timeLabel.setText(new SimpleDateFormat("HH:mm:ss").format(new Date()));
         timeLabel.setHorizontalAlignment("user".equals(msg.role) ? SwingConstants.RIGHT : SwingConstants.LEFT);

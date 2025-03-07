@@ -161,7 +161,6 @@ public class ChatPanel extends JPanel {
             JsonObject requestBody = new JsonObject();
             requestBody.addProperty("model", "deepseek-r1:1.5b");
             requestBody.addProperty("stream", true);
-            System.out.println("输入:" + userInput);
             JsonArray messages = buildMessageArray(userInput);
             requestBody.add("messages", messages);
 
